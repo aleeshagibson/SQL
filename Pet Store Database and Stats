@@ -1,0 +1,32 @@
+--Create a pet store database
+
+CREATE table Pet_Store (id INTEGER PRIMARY KEY, name TEXT, size TEXT, quantity INTEGER, price INTEGER);
+
+INSERT INTO Pet_Store VALUES (1, "red bandanas", "S", 12, 10); 
+INSERT INTO Pet_Store VALUES (2, "red bandanas","M", 7, 15);
+INSERT INTO Pet_Store VALUES (3, "red bandanas","L", 5, 20);
+INSERT INTO Pet_Store VALUES (4, "blue bandanas","S", 11, 10);
+INSERT INTO Pet_Store VALUES (5, "blue bandanas","M", 12, 15);
+INSERT INTO Pet_Store VALUES (6, "blue bandanas","L", 3, 20);
+INSERT INTO Pet_Store VALUES (7, "striped bandanas","S", 8, 10);
+INSERT INTO Pet_Store VALUES (8, "striped bandanas","M", 10, 15);
+INSERT INTO Pet_Store VALUES (9, "striped bandanas","L", 15, 20);
+INSERT INTO Pet_Store VALUES (10, "holiday bandanas","S", 9, 10);
+INSERT INTO Pet_Store VALUES (11, "holiday bandanas","M", 6, 15);
+INSERT INTO Pet_Store VALUES (12, "holiday bandanas","L", 6, 20);
+INSERT INTO Pet_Store VALUES (13, "assorted bandanas","S", 13, 10);
+INSERT INTO Pet_Store VALUES (14, "assorted bandanas","M", 15, 15);
+INSERT INTO Pet_Store VALUES (15, "assorted bandanas","L", 20, 20);
+
+
+--what is the item quantity per price.
+SELECT price, SUM(quantity) FROM Pet_Store GROUP BY price; 
+
+
+--display the database ordered by price.
+SELECT * FROM Pet_Store ORDER BY price desc;
+
+
+--what are the 3 most popular items.
+SELECT name, size, quantity FROM Pet_Store ORDER BY quantity limit 3;
+
